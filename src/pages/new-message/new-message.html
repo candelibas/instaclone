@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>New Message</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+  <ion-item>
+    <ion-label color="black">To:</ion-label>
+    <ion-input type="text" placeholder="Search"></ion-input>
+  </ion-item>
+
+  <ion-item *ngFor="let f of friends">
+    <ion-label>
+        <img [src]="f.profile_img" class="list-img" alt="">
+        <span class="list-username">{{ f.username }}</span>
+      </ion-label>
+    <ion-checkbox item-right color="primary" (ionChange)="checkBox(f.username)" checked="false"></ion-checkbox>
+  </ion-item>
+</ion-content>
+<!-- Footer -->
+<ion-footer *ngIf="input_visible">
+  <ion-toolbar>
+    <ion-buttons start left>
+      <button ion-button icon-right color="black">
+        <ion-icon name="images"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-input type="text" value=""></ion-input>
+    <ion-buttons end>
+      <button ion-button icon-right color="black">
+        <ion-icon name="heart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

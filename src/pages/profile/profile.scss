@@ -1,0 +1,44 @@
+page-profile {
+  /* Profile avatar */
+  .avatar {
+    border-radius: 100%;
+    position: absolute;
+  }
+
+  /* Small for notifications */
+  .badge-container {
+    position: relative;
+  }
+
+  .custom-badge {
+    position:absolute; 
+    top:5px; 
+    left:15px; 
+    background: map-get($colors, danger); 
+    border-radius: 100%; 
+    color: #fff; 
+    font-size: 12px !important;
+    padding: 4px; 
+    font-weight: bold;
+  }
+
+  .info {
+    padding-top: 4px;
+  }
+
+  /* Profile edit button */
+  .edit-button {
+    background: #fff; 
+    border: 1px solid #ccc; 
+    font-size: 13px; 
+    border-radius: 3px;
+    padding: 5px;
+    font-weight: bold;
+    width: 90%;
+    margin-right: 30px;
+  }
+
+  .edit-button:active {
+    border-color: #dce2ed;
+  }
+}

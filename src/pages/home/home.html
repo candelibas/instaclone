@@ -1,14 +1,85 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="white">
+    <ion-buttons start left>
+      <button color="black" ion-button icon-only>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">InstaClone</ion-title>
+
+    <ion-buttons end right>
+      <button color="black" ion-button icon-only (click)="goMessages()">
+        <ion-icon name="paper-plane"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <!-- Story line -->
+  <ion-scroll class="story" scrollX="true">
+    <div class="story_scroll" *ngFor="let s of stories">
+      <div class="story_img_bg">
+      <img no-margin no-padding class="story_img" [src]="s.img"></div>
+      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>
+    </div>
+  </ion-scroll>
+
+  <hr no-margin no-padding>
+  <div (swipe)="swipePage($event)">
+
+    <!-- Cards -->
+    <ion-card no-padding padding-bottom no-margin class="card">
+
+      <ion-row>
+        <ion-col col-10>
+          <ion-item>
+        <ion-avatar item-left>
+          <img src="http://ionicframework.com/dist/preview-app/www/assets/img/sarah-avatar.png.jpeg">
+        </ion-avatar>
+        <h2 style="font-weight: bold">ashleyosama</h2>
+        <p>Cyprus</p>
+        
+      </ion-item>
+        </ion-col >
+        <ion-col col-2>
+          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostPopover()">
+            <ion-icon name="more"></ion-icon>
+        </button>
+        </ion-col>
+      </ion-row>
+      
+
+      <img src="http://ionicframework.com/dist/preview-app/www/assets/img/advance-card-bttf.png" (tap)="tapPhotoLike($event)">
+
+      <p no-margin no-padding>
+        <button clear ion-button icon-only (click)="likeButton()" class="like-btn">
+          <ion-icon no-padding [name]="like_btn.icon_name" color="{{ like_btn.color }}" class="icon-space"></ion-icon>
+        </button>
+        <button clear ion-button icon-only>
+          <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>
+        </button>
+        <button clear ion-button icon-only>
+          <ion-icon no-padding isActive="false" color="black" name="paper-plane" class="icon-space"></ion-icon>
+        </button>
+        <button no-margin no-padding clear color="black" ion-button icon-only style="float: right">
+          <ion-icon name="ios-bookmark-outline"></ion-icon>
+        </button>
+      </p>
+      <hr>
+
+      <ion-card-content>
+        <p class="like-content"><ion-icon name="heart"></ion-icon> 250 likes</p>
+        <p><b>techcrunch</b> Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      
+        <ion-note style="font-size: 12px">
+          11h ago
+        </ion-note>
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
 </ion-content>

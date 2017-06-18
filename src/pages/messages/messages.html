@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>Messages</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item no-lines *ngFor="let m of messages" (click)="goMessageDetail(m.sender, m.profile_img, m.last_message)">
+      <ion-avatar item-left>
+        <img [src]="m.profile_img">
+      </ion-avatar>
+      <h2 style="font-weight: bold">{{ m.sender }}</h2>
+      <p>{{ m.last_message }} <ion-note item-right style="padding-left: 2px">{{ m.time }}</ion-note></p>
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer (click)="goNewMessage()">
+  <ion-toolbar>
+     <p text-center><ion-icon name="add"></ion-icon> New Message</p>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Saved</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+  <ion-toolbar text-center>
+    <p>Only you can see what you've saved</p>
+  </ion-toolbar>
+
+  <ion-grid>
+    <ion-row >
+      <ion-col col-4 class="grid_img" *ngFor="let i of images">
+        <img [src]="i.post_img" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

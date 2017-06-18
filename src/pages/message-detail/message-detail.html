@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>{{ sender }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-note><p text-center no-padding no-margin>April 1, 7:29 PM</p></ion-note>
+    
+    <!-- Sender -->
+    <ion-item no-lines no-margin no-padding text-wrap>
+      <ion-avatar item-left>
+        <img [src]="profile_img">
+      </ion-avatar>
+      <div class="chatbox">LOL. Still using Ionic instead of native techs? It's 2017 mate.</div>
+    </ion-item>
+
+    <!-- Me -->
+    <ion-item no-lines no-margin no-padding text-wrap>
+      <ion-avatar item-right>
+        <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=460">
+      </ion-avatar>
+      <div margin-left class="chatbox chatbox-right">You are doomed bruh! ;)</div>
+    </ion-item>
+
+    
+    <ion-item no-lines no-margin no-padding text-wrap>
+      <ion-avatar item-left>
+        <img [src]="profile_img">
+      </ion-avatar>
+      <div class="chatbox">{{ last_message }}</div>
+    </ion-item>
+
+    <!-- Heart icon -->
+    <ion-item no-lines no-margin no-padding text-wrap *ngIf="send_like_icon" item-right>
+      <ion-avatar item-right>
+        <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=460">
+      </ion-avatar>
+      <div text-right [ngClass]="{'like-msg-btn': likeBtnVisible }">
+        <ion-icon name="heart" [ngClass]="{'like-btn': likeBtnVisible, 'heart-size': true }" color="danger"></ion-icon>
+      </div>
+    </ion-item>
+
+</ion-content>
+<!-- Footer -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons start left>
+      <button ion-button icon-right color="black">
+        <ion-icon name="images"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-input type="text" value=""></ion-input>
+    <ion-buttons end>
+      <button ion-button icon-right color="black" (click)="sendLike()">
+        <ion-icon name="heart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,12 @@
+<ion-header>
+    <ion-searchbar class="searchbar" (input)="getItems($event)"></ion-searchbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let s of search_data" class="grid_img" col-4 (press)="pressPhoto(s.id, s.username, s.profile_img, s.post_img)">
+        <img [src]="s.post_img" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

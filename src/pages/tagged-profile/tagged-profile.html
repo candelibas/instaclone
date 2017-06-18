@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Photos of You</ion-title>
+    <ion-buttons end right>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row >
+      <ion-col col-4 class="grid_img" *ngFor="let i of images">
+        <img [src]="i.post_img" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

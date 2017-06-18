@@ -14,3 +14,77 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+/* Heart beat animation*/
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .95 );
+  }
+}
+
+/* Like button */
+.like-btn:active {
+  animation: heartbeat 1s linear;
+}
+
+/* Link */
+a {
+  text-decoration: none;
+  color: #003581;
+}
+
+/* Grid */
+.grid_img {
+  margin-bottom: -5px;
+}
+.grid_img img{
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  filter: brightness(100%);
+}
+
+.grid_img:active img{
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  filter: brightness(70%);
+}
+
+/* Card Content */
+.card {
+  width: 100vw !important;
+}
+
+.like-content {
+  font-weight: bold;
+  font-family: Helvetica Neue;
+}
+
+.icon-space {
+  padding-top: 3px;
+  padding-left: 10px;
+}

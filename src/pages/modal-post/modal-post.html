@@ -1,0 +1,48 @@
+<ion-content class="main-modal">
+  <div class="modal">
+
+    <ion-row>
+      <ion-col col-2>
+        <img [src]="modal_data.profile_img" class="avatar-modal" alt=""> 
+      </ion-col>
+
+      <ion-col col-8>
+        <p (click)="profile()">{{ modal_data.username }}</p>
+      </ion-col>
+
+      <!-- If you wish, you can add close icon too. Just delete comment code -->
+      <ion-col col-2><span style="float: right" (click)="dismiss()"><ion-icon name="ios-close-circle-outline"></ion-icon></span></ion-col>
+
+    </ion-row>
+
+    <!-- Post image -->
+    <div>
+      <img [src]="modal_data.post_img" alt="">
+    </div>
+
+    <ion-row text-center>
+      <ion-col col-3 no-margin no-padding>
+        <button clear ion-button icon-only style="margin-top: 2px" class="like-btn" (click)="likeButton()">
+          <ion-icon [name]="like_btn.icon_name" color="{{ like_btn.color }}"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3 no-margin no-padding>
+        <button no-margin no-padding clear color="black" ion-button icon-only (click)="goUserProfile(1)">
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3 no-margin no-padding>
+        <button clear color="black" ion-button icon-only style="margin-top: 2px">
+          <ion-icon name="paper-plane"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3 no-margin no-padding style="margin-bottom: 5px">
+        <button clear color="black" ion-button icon-only>
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,20 @@
+page-message-detail {
+  .chatbox {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 9px;
+  }
+
+  .chatbox-right {
+    background-color: #EEEEEE;
+  }
+
+  .heart-size {
+    font-size: 34px;
+  }
+
+  .like-msg-btn {
+    float: right;
+    animation: heartbeat 1s linear;
+  }
+}

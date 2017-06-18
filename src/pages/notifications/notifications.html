@@ -1,0 +1,123 @@
+<ion-header>
+
+  <ion-segment [(ngModel)]="page">
+    <ion-segment-button value="following">
+      Following
+    </ion-segment-button>
+    <ion-segment-button value="you">
+      You
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-header>
+
+
+<ion-content>
+  <div [ngSwitch]="page">
+    <!-- Following -->
+    <ion-list *ngSwitchCase="'following'">
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://pbs.twimg.com/profile_images/726955832785571840/8OxhcDxl_400x400.jpg">
+        </ion-avatar>
+        <p><b>maxlynch</b> started following <b>ionic</b>, <b>angular</b> and 4 others. <ion-note>44s</ion-note></p>
+      </ion-item>
+
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg">
+        </ion-avatar>
+        <p><b>adam_bradley</b> liked 3 posts. <ion-note>6m</ion-note></p>
+        <ion-row>
+          <ion-col col-2><img src="https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/10852865_738738146215825_1258215298_n.jpg"  alt=""></ion-col>
+          <ion-col col-2><img src="https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/891528_841068522581102_1591061904_n.jpg"  alt=""></ion-col>
+          <ion-col col-2><img src="https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e35/10809765_1474804169496730_887570428_n.jpg"  alt=""></ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://pbs.twimg.com/profile_images/726955832785571840/8OxhcDxl_400x400.jpg">
+        </ion-avatar>
+        <ion-row>
+          <ion-col col-10  no-padding no-margin>
+            <p><b>maxlynch</b> liked <b>adam_bradley</b>'s post. <ion-note>11m</ion-note></p>
+          </ion-col>
+          <ion-col col-2>        
+            <img src="https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg" class="post-small-img" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://pbs.twimg.com/profile_images/726955832785571840/8OxhcDxl_400x400.jpg">
+        </ion-avatar>
+        <ion-row>
+          <ion-col col-10  no-padding no-margin>
+            <p><b>maxlynch</b> liked <b>adam_bradley</b>'s comment: Typescript <3 <ion-note>1h</ion-note></p>
+          </ion-col>
+          <ion-col col-2>        
+            <img src="https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg" class="post-small-img" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      
+    </ion-list>
+
+    <!-- You -->
+    <ion-list *ngSwitchCase="'you'">
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://pbs.twimg.com/profile_images/726955832785571840/8OxhcDxl_400x400.jpg">
+        </ion-avatar>
+        <p><b>maxlynch</b> started to following you. <ion-note>1m</ion-note></p>
+      </ion-item>
+
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="http://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+        </ion-avatar>
+        <ion-row>
+          <ion-col col-10  no-padding no-margin>
+            <p><b>maxlynch</b>, <b>linus_torvalds</b> and <b>21 others</b> liked your post. <ion-note>11m</ion-note></p>
+          </ion-col>
+          <ion-col col-2>        
+            <img src="https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/10852865_738738146215825_1258215298_n.jpg" class="post-small-img" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://avatars1.githubusercontent.com/u/1024025?v=3&s=120">
+        </ion-avatar>
+        <ion-row>
+          <ion-col col-10  no-padding no-margin>
+            <p><b>linus_torvalds</b> commented:</p>
+            <p>Linux rocks! <ion-note>7w</ion-note></p>
+          </ion-col>
+          <ion-col col-2>        
+            <img src="https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/10727665_1503362866586919_965169345_n.jpg" class="post-small-img" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item no-lines text-wrap>
+        <ion-avatar item-left>
+          <img src="https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg">
+        </ion-avatar>
+        <ion-row>
+          <ion-col col-10  no-padding no-margin>
+            <p><b>adam_bradley</b> tagged you in a post. <ion-note>8w</ion-note></p>
+          </ion-col>
+          <ion-col col-2>        
+            <img src="https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/891528_841068522581102_1591061904_n.jpg" class="post-small-img" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+</ion-content>

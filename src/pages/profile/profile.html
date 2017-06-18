@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>candelibas</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="person-add" class="badge-container">
+          <span class="custom-badge">3</span>
+        </ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goOptions()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+  <ion-row padding>
+    <!-- Avatar -->
+    <ion-col col-3>
+      <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=120" class="avatar" alt="">
+    </ion-col>
+    <!-- Information about user -->
+    <ion-col col-3 text-center >
+      <h6>21</h6>
+      <p no-padding no-margin>posts</p>
+    </ion-col>
+    <ion-col col-3 text-center>
+      <h6>114</h6>
+      <p no-paddin no-margin>followers</p>
+    </ion-col>
+    <ion-col col-3 text-center>
+      <h6>119</h6>
+      <p no-paddin no-margin>following</p>
+    </ion-col>
+  </ion-row>
+
+  <!-- Edit/follow button -->
+  <ion-row no-padding no-margin>
+    <ion-col no-padding no-margin col-4></ion-col>
+      <ion-col no-padding no-margin text-center col-8>
+      <button class="edit-button" (click)="goEditProfile()">Edit your profile</button>
+    </ion-col>
+    <ion-col col-3></ion-col>
+  </ion-row>
+
+  <!-- Profile info -->
+  <div padding>
+    <p no-margin no-padding><b>Can Delibas</b></p>
+    <p no-padding no-margin class="info">Software developer, open-source lover, invoker spammer & heavy metal guitarist</p>
+    <p no-padding no-margin class="info"><a href="#">github.com/candelibas</a></p>
+  </div>
+
+  <!-- Segments -->
+  <div>
+    <ion-segment [(ngModel)]="profile_segment">
+      <ion-segment-button value="grid">
+        <ion-icon name="apps"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="list">
+        <ion-icon name="list"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="tagged" (click)="goTaggedProfile()">
+        <ion-icon name="photos"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="saved" (click)="goSavedProfile()">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Segment content -->
+  <div [ngSwitch]="profile_segment">
+    <ion-list *ngSwitchCase="'grid'">
+      <ion-grid>
+        <ion-row >
+          <ion-col col-4 class="grid_img" *ngFor="let i of images" (press)="pressPhoto(i.id, i.username, i.profile_img, i.post_img)">
+            <img [src]="i.post_img" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'list'">
+      
+
+    </ion-list>
+  </div>
+  
+
+
+</ion-content>
