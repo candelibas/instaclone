@@ -11,6 +11,7 @@ ionic serve
 ```
 
 #### Features:
+* Login screen
 * Home screen
 * Search screen
 * Messaging/new message screens
@@ -20,7 +21,7 @@ ionic serve
 
 #### To-do(s)
 * Complete stories
-* Login/signup screens
+* Signup screens
 * Pull-to-refresh
 
 **This is just a theme,** it does not have any backend. It only includes dummy data. You can write your own backend services or you can hire me. Feel free to contribute. Here is my mail for contact: candelibas00@gmail.com
